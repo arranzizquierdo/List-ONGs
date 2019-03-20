@@ -1,0 +1,17 @@
+.container-list {
+    margin: 20px;
+}
+
+.title-list {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    background-color: rgb(122, 221, 122);
+    padding: 0 20px;
+    border-radius: 10px;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+}

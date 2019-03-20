@@ -1,25 +1,45 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import './App.scss';
+import Filter from './components/filter';
+import ListONGs from './components/listOngs';
+import data from './components/data';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      data: data,
+      inputName: ''
+    }
+
+    this.getInputName = this.getInputName.bind(this);
+  }
+
+  getInputName(e) {
+    
+    this.setState({
+      inputName: e.currentTarget.value
+    })
+  }
+
+  filteredByName() {
+    const { data, inputName } = this.state;
+    const filteredOngs = data.filter(item => {
+      return item.name.includes(inputName.toUpperCase());
+    })
+
+    return filteredOngs;
+  }
+
   render() {
+    const filteredOngs = this.filteredByName();
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Filter getInputName={this.getInputName}/>
+        <ListONGs data={filteredOngs}/>
       </div>
     );
   }

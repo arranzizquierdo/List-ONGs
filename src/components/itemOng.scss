@@ -1,0 +1,32 @@
+.container-ong {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    margin: 20px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.section-code{
+    display: flex;
+}
+
+.container-detaile {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgb(207, 247, 207);
+    border-radius: 10px;
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+}
+
+.link-web {
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;
+    text-decoration: none;
+}
